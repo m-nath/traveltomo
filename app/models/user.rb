@@ -3,7 +3,6 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
-  mount_uploader :photo, PhotoUploader
   has_many :interests
   has_many :interested_events, :through => :interests, :source => :event
 
@@ -14,4 +13,5 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true
   validates :password, presence: true
+  mount_uploader :photo, PhotoUploader
 end
