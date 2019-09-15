@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :events, except: [:edit, :update, :destroy]
   resources :plans, except: [:destroy]
   resources :event_plans, only: [:create]
+
+  get 'events/tagged', to: "events#tagged", as: :events_tagged
 end
