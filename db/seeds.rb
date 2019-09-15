@@ -30,12 +30,34 @@ test = User.create!(
   # photo: open("https://res.cloudinary.com/dxouryvao/image/upload/v1566268919/51040522_mxitwx.jpg")
 )
 
-# puts 'Create Events'
+puts 'Create Events'
 
-# event_1 = Event.create!(
-#   name: 'Meguro Cherry Blossom Festival'
-#   description: 'One of the most popular cherry blossom in Tokyo.......'
-#   date:
-#   location: 'Meguro Canal'
+event_1 = Event.create!(
+  name: 'Nakameguro Cherry Blossom Festival',
+  description: 'The home of the most famous cherry blossom spot in Tokyo, Nakameguro canal is a blossom wonderland in spring.',
+  date: 'March 23, 2020 - April 10, 2020',
+  location: '2-2 Nakameguro, Meguro-ku, Tokyo',
+  genre: 'Nature',
+  photo: open(''),
+  user: nath
+)
 
-# )
+event_2 = Event.create!(
+  name: 'Chidorigafuchi Cherry Blossom Festival',
+  description: 'The home of the most famous cherry blossom spot in Tokyo, Nakameguro canal is a blossom wonderland in spring.',
+  date: 'March 23, 2020 - April 10, 2020',
+  location: '2 Chome Kudanminami, Chiyoda City, Tokyo',
+  genre: 'Nature',
+  photo: open(''),
+  user: nath
+)
+
+event_3 = Event.create!(
+  name: 'Old Nakagawa Riverbed Kawazu Cherry Blossom',
+  description: 'The home of the most famous cherry blossom spot in Tokyo, Nakameguro canal is a blossom wonderland in spring.',
+  date: 'March 23, 2020 - April 10, 2020',
+  location: '3 Chome-1-1 Hirai, Edogawa City, Tokyo',
+  genre: 'Nature',
+  photo: open(''),
+  user: nath
+)

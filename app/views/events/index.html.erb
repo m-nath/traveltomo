@@ -16,7 +16,6 @@
           <% end %>
           <%= tag.name %> &nbsp;&nbsp;
         <% end %>
-        <br>
         <div class="my-3">
           <%= f.submit "Search", class: "btn btn-main" %>
           <%= link_to "Reset", events_path, class: "btn btn-secondery" %>
@@ -24,3 +23,29 @@
       <% end %>
     </div>
     <!-- search bar & filter end-->
+    <div class="container">
+      <ul class="nav nav-tabs" id="myTab" role="tablist" style="
+  font-size: large;
+  font-weight: bold;">
+        <li class="nav-item">
+          <a class="tab-text nav-link active" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="tab-text nav-link" id="area-tab" data-toggle="tab" href="#area" role="tab" aria-controls="area" aria-selected="false">By Area</a>
+        </li>
+      </ul>
+      <!-- CONTENT -->
+      <div class="tab-content" id="myTabContent">
+        <!-- kitchen content -->
+        <div class="tab-panel show active" id="event" role="tabpanel" aria-labelledby="event-tab">
+          <%= render 'shared/eventcards' %>
+        </div>
+        <!--  <div class="tab-panel" id="plan" role="tabpanel" aria-labelledby="plan-tab">
+          <div class="row mt-3">
+            <%#= render 'shared/plancard_index' %>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
