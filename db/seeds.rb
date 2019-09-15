@@ -18,7 +18,7 @@ nath = User.create!(
   first_name: "Nath",
   last_name: "Zheng",
   admin: true,
-  photo: open("https://res.cloudinary.com/dxouryvao/image/upload/v1566268733/nath_q0kaa1.png")
+  photo: open('res.cloudinary.com/dxouryvao/image/upload/v1566268733/nath_q0kaa1.png')
 )
 
 test = User.create!(
@@ -26,8 +26,8 @@ test = User.create!(
   password: "123123",
   first_name: "test",
   last_name: "123",
-  admin: false,
-  photo: open("https://res.cloudinary.com/dxouryvao/image/upload/v1566268919/51040522_mxitwx.jpg")
+  admin: false
+  # photo: open("https://res.cloudinary.com/dxouryvao/image/upload/v1566268919/51040522_mxitwx.jpg")
 )
 
 # puts 'Create Events'

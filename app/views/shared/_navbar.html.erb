@@ -22,9 +22,11 @@
       </div>
       <!-- search button end -->
       <!-- my plan start -->
-      <% if user_signed_in? %>
-        <div><%= link_to "My Plan", plans_path, class: "nav-link navbar-text" %></div>
-      <% end %>
+      <div class="ml-4">
+        <% if user_signed_in? && current_user.plans.present? %>
+          <div><%= link_to "My Plan", plans_path, class: "nav-link navbar-text" %></div>
+        <% end %>
+      </div>
       <!-- my plan end -->
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
