@@ -1,35 +1,54 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <div class="d-flex align-self-end">
+      <div><%= image_tag "traveltomo-logo.png" %></div>
+      <h2 class="mx-3 logo-text">Traveltomo</h2>
+    </div>
+  <% end %>
+  <!-- button for responsive (start)-->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
-
+  <!-- button for responsive (finish)-->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+    <div class="d-flex align-items-center">
+      <!-- search button start -->
+      <div class="input-group-prepend d-flex align-items-center position-search">
+        <i class="fas fa-search navbar-search"></i>
+        <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
+          <%= f.input :query, label: false, input_html: {class: 'form-control d-flex align-items-center fa', value: (params[:search][:query] if params[:search])}, placeholder: "find an event" %>
+          <!-- <button type="submit"></i></button> -->
+        <% end %>
+      </div>
+      <!-- search button end -->
+      <!-- my plan start -->
+      <div class="ml-4">
+        <% if user_signed_in? && current_user.plans.present? %>
+          <div><%= link_to "My Plan", plans_path, class: "nav-link navbar-text" %></div>
+        <% end %>
+      </div>
+      <!-- my plan end -->
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <% if current_user.photo.present? %>
+              <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% else %>
+              <%= image_tag 'traveltomo-logo.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <p class="m-3 ml-1">Hi, <%= current_user.first_name %></p>
+              <%= link_to "Setting", edit_user_registration_path(current_user), class: "dropdown-item navbar-text" %>
+              <%= link_to "Create a Plan", new_plan_path, class: "dropdown-item navbar-text" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item navbar-text" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link navbar-text" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
