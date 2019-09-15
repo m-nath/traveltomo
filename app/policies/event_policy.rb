@@ -25,7 +25,7 @@ class EventPolicy < ApplicationPolicy
     end
 
     def destroy
-      edit??
+      edit?
     end
   end
 end
