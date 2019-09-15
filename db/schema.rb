@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_031815) do
+ActiveRecord::Schema.define(version: 2019_09_15_073820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_09_15_031815) do
     t.string "name"
     t.text "description"
     t.string "photo"
-    t.date "date"
     t.text "location"
     t.float "latitude"
     t.float "longitude"
@@ -37,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_09_15_031815) do
     t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "date"
     t.index ["month_id"], name: "index_events_on_month_id"
     t.index ["prefectures_id"], name: "index_events_on_prefectures_id"
   end
@@ -132,10 +132,10 @@ ActiveRecord::Schema.define(version: 2019_09_15_031815) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.string "first_name"
     t.string "last_name"
     t.boolean "admin"
+    t.string "photo", default: "https://res.cloudinary.com/dxouryvao/image/upload/v1568532657/traveltomo-logo_r1gjwh.png"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
