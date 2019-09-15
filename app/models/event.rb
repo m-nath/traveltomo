@@ -1,8 +1,5 @@
 class Event < ApplicationRecord
 
-  belongs_to :month
-  belongs_to :prefectures
-
   has_many :reviews, dependent: :destroy
   has_many :interests_users, :through => :interests, :source => :user
 

@@ -2,25 +2,18 @@
   <% @events.each do |event|%>
     <div class="col-lg-3 col-md-4 col-md-6 col-sm-12">
       <div class="card-trip-home">
-        <%= cl_image_tag(event.photo) %>
+        <!--         <%= cl_image_tag(event.photo) %> -->
         <div class="card-trip-infos">
           <div class="">
-            <p class="m-2"><% event.average_rating.to_i.times do  %>
-                <i class="fas fa-star bento-star"></i>
-              <% end %>
-              <% (5 - event.average_rating).to_i.times do  %>
-                <i class="fas fa-star bento-star-gray"></i>
-              <% end %>
-            </p>
             <h4 class="tab-text-content mx-2"><%= link_to event.name, event_path(event), { :class=>"stretched-link" }  %></h4>
           </div>
-          <%= link_to (cl_image_tag event.user.photo, class:"card-trip-user-big avatar-bordered"), event_path(event) %>
+          <!--           <%#= link_to (cl_image_tag event.user.photo, class:"card-trip-user-big avatar-bordered"), event_path(event) %> -->
         </div>
-        <div class="mx-3">
-          <% event.tag_list.each do |tag| %>
-            <%= link_to '#'+tag, events_path(tag: tag), class: "tab-text-tag mx-1 px-1" %>
-          <% end %>
-        </div>
+        <!--         <div class="mx-3">
+          <%# event.tag_list.each do |tag| %>
+            <%#= link_to '#'+tag, events_path(tag: tag), class: "tab-text-tag mx-1 px-1" %>
+          <% #end %>
+        </div> -->
       </div>
     </div>
   <% end %>
