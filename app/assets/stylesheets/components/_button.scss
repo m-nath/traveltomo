@@ -1,0 +1,210 @@
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn-main {
+  color: $white;
+  padding: 6px 24px;
+  border-radius: 100px;
+  background: $red;
+  transition: background 0.3s ease;
+}
+
+button.stripe-button-el {
+  visibility: hidden;
+  display: none;
+}
+
+.btn-main:hover {
+  color: $white;
+  padding: 6px 24px;
+  border-radius: 100px;
+  background: $pink;
+  transition: background 0.3s ease;
+}
+
+.btn-secondery {
+  color: $red;
+  padding: 6px 24px;
+  border-radius: 100px;
+  border-color: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-secondery a {
+  color: $red;
+  text-decoration: none;
+  padding: 6px 24px;
+  border-radius: 100px;
+  border-color: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-secondery:hover {
+  color: $pink;
+  padding: 6px 24px;
+  border-radius: 100px;
+  border-color: $pink;
+  transition: background 0.3s ease;
+}
+
+.btn-secondery:hover a {
+  color: $pink;
+  padding: 6px 24px;
+  border-radius: 100px;
+  border-color: $pink;
+  transition: background 0.3s ease;
+}
+
+.btn-short {
+  color: $red;
+  font-weight: lighter;
+  padding: 0px 24px;
+  border-radius: 100px;
+  border-width: 0.5px;
+  border-color: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-short:hover {
+  color: $pink;
+  font-weight: lighter;
+  padding: 0px 24px;
+  border-radius: 100px;
+  border-width: 0.5px;
+  border-color: $pink;
+  transition: background 0.3s ease;
+}
+
+.btn-long {
+  color: $white;
+  width: 100%;
+  padding: 6px 240px;
+  border-radius: 100px;
+  background: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-long:hover {
+  color: $white;
+  width: 100%;
+  padding: 6px 240px;
+  border-radius: 100px;
+  background: $pink;
+  transition: background 0.3s ease;
+}
+
+.btn-long-2 {
+  color: $white;
+  width: 100%;
+  border-radius: 100px;
+  background: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-long-2:hover {
+  color: $white;
+  width: 100%;
+  border-radius: 100px;
+  background: $pink;
+  transition: background 0.3s ease;
+}
+
+.btn-search {
+  color: $white;
+  padding: 6px 24px;
+  border-radius: 100px;
+  background: #BFA68C;
+  transition: background 0.3s ease;
+  height: 2.5rem;
+}
+
+.btn-search:hover {
+  color: $white;
+  padding: 6px 24px;
+  border-radius: 100px;
+  background: #D4C8B9;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary-chat {
+  padding: 2px;
+  border-radius: 100px;
+  border-color: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary-chat a {
+  padding: 2px;
+  border-radius: 100px;
+  border-color: $red;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary-chat:hover {
+  padding: 2px;
+  border-radius: 100px;
+  border-color: $pink;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary-text {
+  color: $red !important;
+}
+
+.btn-secondary-text a {
+  color: $red !important;
+}
+
+.btn-secondary-text:hover {
+  color: $pink !important;
+}
+
+.history-btn {
+  color: $black;
+}
+
+.history-btn a {
+  color: $black;
+  text-decoration: none;
+}
+
+.history-btn:hover {
+  color: $red;
+  text-decoration: none;
+}
+
+.pay-btn {
+  color: $red;
+}
+
+.pay-btn a {
+  color: $red;
+}
+
+.pay-btn:hover a {
+  color: $pink;
+  text-decoration: none;
+}
+
+.order-again-form {
+  width: 320px;
+  position: absolute !important;
+  top: -25px !important;
+  left: 15px !important;
+  padding-left: 25px;
+}
+
+.price-text {
+  margin-bottom: 0px;
+  margin-right: 16px;
+  margin-left: 10px;
+}
+
+.kill-margin {
+  margin-bottom: 0px;
+}
+
+.kill-padding {
+  padding: 0px;
+}

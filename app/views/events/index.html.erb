@@ -1,23 +1,26 @@
-<div class="banner mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('<%= image_path "banner.jpeg" %>');">
-  <div class="d-flex flex-column mb-3">
-    <div class="p-2 d-flex justify-content-center" style="
-      margin-top: 100px;">
-      <!-- <span id="banner-typed-text"></span> -->
-      <h2>Make your travel experience unforgettable</h2>
-    </div>
-    <div class="p-2 d-flex justify-content-center">
-      <form novalidate="novalidate" class="simple_form search  banner-search" action="/#result" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="&#x2713;" />
-        <div class="search-form-control form-group mb-4" style="width: 55vw;">
-          <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="e.g. Spring (season),   Meguro (location), etc..."/>
-          <button name="button" type="submit" class="btn btn-search">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      </form>
-      <div class="d-flex align-items-end justify-content-center" style="height: 75vh;">
-      </div>
-    </div>
+<div class="container">
+  <div class="d-flex my-4">
+    <h3><i class="fas fa-map-marked-alt"></i></h3>
+    <h2 class="mx-3">Find Your Destination</h2>
   </div>
-</div>
-<div id="result"></div>
-<!-- above are banner! -->
+  <!-- search bar & filter start-->
+  <div class="row mb-5">
+    <div class="col">
+      <%= simple_form_for :search, url: events_path, method: "GET" do |f| %>
+        <%= f.input :query, label: false, input_html: {class: 'form-control', value: (params[:search][:query] if params[:search])}, placeholder: "Find an event" %>
+        <%  ActsAsTaggableOn::Tag.most_used(10).map do |tag|%>
+          <% if @tags.nil? %>
+            <%= check_box_tag 'search[tags][]', tag.name, false %>
+          <% else %>
+            <%= check_box_tag 'search[tags][]', tag.name, (params[:search] ? params[:search][:tags].include?(tag.name) : false) %>
+          <% end %>
+          <%= tag.name %> &nbsp;&nbsp;
+        <% end %>
+        <br>
+        <div class="my-3">
+          <%= f.submit "Search", class: "btn btn-main" %>
+          <%= link_to "Reset", events_path, class: "btn btn-secondery" %>
+        </div>
+      <% end %>
+    </div>
+    <!-- search bar & filter end-->

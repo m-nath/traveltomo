@@ -18,7 +18,7 @@ nath = User.create!(
   first_name: "Nath",
   last_name: "Zheng",
   admin: true,
-  photo: open('res.cloudinary.com/dxouryvao/image/upload/v1566268733/nath_q0kaa1.png')
+  photo: open('https://res.cloudinary.com/dxouryvao/image/upload/v1566268733/nath_q0kaa1.png')
 )
 
 test = User.create!(
