@@ -1,0 +1,5 @@
+meta_product_name: "Traveltomo"
+meta_title: "Traveltomo - Your Travel Planner"
+meta_description: "Make your trip an unforgettable experience"
+meta_image: "traveltomo-logo.png" # should exist in `app/assets/images/`
+twitter_account: "@traveltomo_official"   # required for Twitter Cards
