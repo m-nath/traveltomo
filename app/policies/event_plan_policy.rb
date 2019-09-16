@@ -3,13 +3,13 @@ class EventPlanPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def create?
-      record.plan.user == user
-    end
+  def create?
+    record.plan.user == user
+  end
 
-    def destroy?
-      create?
-    end
+  def destroy?
+    create?
   end
 end
