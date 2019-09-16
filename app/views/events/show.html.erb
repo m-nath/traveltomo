@@ -6,12 +6,24 @@
       <%= render 'edit_form' %>
     <% end %>
     <p class="banner-p text-break">Best view: <%= @event.date %></p>
-    <!--     <%#= cl_image_tag @event.user.photo, class: "avatar-extra-large" %> -->
+    <!-- interest -->
+    <div class="int-btn">
+      <% if user_signed_in? && current_user.interested_events.include?(@event) %>
+        <%= link_to interest_path(@interest), method: :delete, data: { confirm: "You have removed this event from your interest list" } do %>
+          <div class = "text-center btn btn-main m-2">Remove Interest</div>
+        <% end %>
+      <% else %>
+        <%= link_to event_interests_path(@event), method: :post, data: { confirm: "You have saved this event in your interest list" } do %>
+          <div class = "btn btn-main m-2">Interested</div>
+        <% end %>
+      <% end %>
+    </div>
+    <!-- interest end -->
   </div>
 </div>
 <!-- banner end -->
 <!-- content start -->
-<div class="d-flex pb-4 justify-content-around">
+<div class="d-flex pb-4 justify-content-aroun mr-4">
   <div class="ml-4 mr-4">
     <p><%= @event.description %></p>
     <p>Address: <%= @event.location %></p>
@@ -55,10 +67,9 @@
         <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 500px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_SERVER_KEY']}&callback=myMap"></script>
       </div>
     </div>
     <div class="col-12 col-sm-12 col-md-6">
