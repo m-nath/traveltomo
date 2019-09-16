@@ -3,11 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
-  has_many :interests
+  has_many :interests, dependent: :destroy
   has_many :interested_events, :through => :interests, :source => :event
 
   has_many :reviews, dependent: :destroy
-  has_many :plans
+  has_many :plans, dependent: :destroy
+  has_many :events, dependent: :destroy
   # has_many :planned_events, :through => :plans,
   validates :first_name, presence: true
   validates :last_name, presence: true

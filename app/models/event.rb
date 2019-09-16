@@ -2,14 +2,15 @@ class Event < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
   has_many :interests_users, :through => :interests, :source => :user
+  belongs_to :user
 
   include PgSearch
   pg_search_scope :global_search,
     against: [ :name, :location, :date, :genre ],
-  associated_against: {
-    month: [ :name ],
-    prefectures: [ :name]
-  },
+    # associated_against: {
+    #   month: [ :name ],
+    #   prefectures: [ :name]
+    # },
   using: {
     tsearch: { prefix: true }
   }
