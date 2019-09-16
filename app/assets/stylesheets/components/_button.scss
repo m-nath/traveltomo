@@ -6,7 +6,7 @@
   color: $white;
   padding: 6px 24px;
   border-radius: 100px;
-  background: $red;
+  background: $darkorange;
   transition: background 0.3s ease;
 }
 
@@ -19,60 +19,60 @@ button.stripe-button-el {
   color: $white;
   padding: 6px 24px;
   border-radius: 100px;
-  background: $pink;
+  background: $gold;
   transition: background 0.3s ease;
 }
 
 .btn-secondery {
-  color: $red;
+  color: $darkorange;
   padding: 6px 24px;
   border-radius: 100px;
-  border-color: $red;
+  border-color: $darkorange;
   transition: background 0.3s ease;
 }
 
 .btn-secondery a {
-  color: $red;
+  color: $darkorange;
   text-decoration: none;
   padding: 6px 24px;
   border-radius: 100px;
-  border-color: $red;
+  border-color: $darkorange;
   transition: background 0.3s ease;
 }
 
 .btn-secondery:hover {
-  color: $pink;
+  color: $gold;
   padding: 6px 24px;
   border-radius: 100px;
-  border-color: $pink;
+  border-color: $gold;
   transition: background 0.3s ease;
 }
 
 .btn-secondery:hover a {
-  color: $pink;
+  color: $gold;
   padding: 6px 24px;
   border-radius: 100px;
-  border-color: $pink;
+  border-color: $gold;
   transition: background 0.3s ease;
 }
 
 .btn-short {
-  color: $red;
+  color: $darkorange;
   font-weight: lighter;
   padding: 0px 24px;
   border-radius: 100px;
   border-width: 0.5px;
-  border-color: $red;
+  border-color: $darkorange;
   transition: background 0.3s ease;
 }
 
 .btn-short:hover {
-  color: $pink;
+  color: $gold;
   font-weight: lighter;
   padding: 0px 24px;
   border-radius: 100px;
   border-width: 0.5px;
-  border-color: $pink;
+  border-color: $gold;
   transition: background 0.3s ease;
 }
 
@@ -81,7 +81,7 @@ button.stripe-button-el {
   width: 100%;
   padding: 6px 240px;
   border-radius: 100px;
-  background: $red;
+  background: $darkorange;
   transition: background 0.3s ease;
 }
 
@@ -90,7 +90,25 @@ button.stripe-button-el {
   width: 100%;
   padding: 6px 240px;
   border-radius: 100px;
-  background: $pink;
+  background: $gold;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary-long {
+  color: $darkorange;
+  width: 100%;
+  padding: 6px 240px;
+  border-radius: 100px;
+  border-color: $darkorange;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary-long:hover {
+  color: $gold;
+  width: 100%;
+  padding: 6px 240px;
+  border-radius: 100px;
+  border-color: $gold;
   transition: background 0.3s ease;
 }
 
@@ -98,7 +116,7 @@ button.stripe-button-el {
   color: $white;
   width: 100%;
   border-radius: 100px;
-  background: $red;
+  background: $darkorange;
   transition: background 0.3s ease;
 }
 
@@ -106,7 +124,7 @@ button.stripe-button-el {
   color: $white;
   width: 100%;
   border-radius: 100px;
-  background: $pink;
+  background: $gold;
   transition: background 0.3s ease;
 }
 
@@ -130,34 +148,34 @@ button.stripe-button-el {
 .btn-secondary-chat {
   padding: 2px;
   border-radius: 100px;
-  border-color: $red;
+  border-color: $darkorange;
   transition: background 0.3s ease;
 }
 
 .btn-secondary-chat a {
   padding: 2px;
   border-radius: 100px;
-  border-color: $red;
+  border-color: $darkorange;
   transition: background 0.3s ease;
 }
 
 .btn-secondary-chat:hover {
   padding: 2px;
   border-radius: 100px;
-  border-color: $pink;
+  border-color: $gold;
   transition: background 0.3s ease;
 }
 
 .btn-secondary-text {
-  color: $red !important;
+  color: $darkorange !important;
 }
 
 .btn-secondary-text a {
-  color: $red !important;
+  color: $darkorange !important;
 }
 
 .btn-secondary-text:hover {
-  color: $pink !important;
+  color: $gold !important;
 }
 
 .history-btn {
@@ -170,22 +188,10 @@ button.stripe-button-el {
 }
 
 .history-btn:hover {
-  color: $red;
+  color: $darkorange;
   text-decoration: none;
 }
 
-.pay-btn {
-  color: $red;
-}
-
-.pay-btn a {
-  color: $red;
-}
-
-.pay-btn:hover a {
-  color: $pink;
-  text-decoration: none;
-}
 
 .order-again-form {
   width: 320px;
