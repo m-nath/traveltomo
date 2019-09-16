@@ -7,10 +7,9 @@ class Event < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :name, :location, :date, :genre],
-    # associated_against: {
-    #   month: [ :name ],
-    #   prefectures: [ :name]
-    # },
+  associated_against: {
+    tags: [ :name ]
+  },
   using: {
     tsearch: { prefix: true }
   }

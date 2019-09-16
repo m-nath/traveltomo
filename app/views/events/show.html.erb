@@ -9,11 +9,11 @@
     <!-- interest -->
     <div class="int-btn">
       <% if user_signed_in? && current_user.interested_events.include?(@event) %>
-        <%= link_to interest_path(@interest), method: :delete, data: { confirm: "You have removed this event from your interest list" } do %>
-          <div class = "text-center btn btn-main m-2">Remove Interest</div>
+        <%= link_to interest_path(@event), method: :delete, data: { confirm: "You have removed this event from your interest list" } do %>
+          <div class = "btn btn-main m-2">Remove Interest</div>
         <% end %>
       <% else %>
-        <%= link_to event_interests_path(@event), method: :post, data: { confirm: "You have saved this event in your interest list" } do %>
+        <%= link_to event_interests_path(@event), method: :post, data: { confirm: "You have add this event in your interest list" } do %>
           <div class = "btn btn-main m-2">Interested</div>
         <% end %>
       <% end %>
