@@ -1,6 +1,8 @@
 class Plan < ApplicationRecord
-  belongs_to :user
-  belongs_to :month
 
+  has_many :event_plans, dependent: :destroy
   has_many :events, through: :event_plans
+
+  validates :name, presence: true
+  validates :date, presence: true
 end
