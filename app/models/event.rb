@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   has_many :interests_users, :through => :interests, :source => :user
   belongs_to :user
 
-  include PgSearch
+  include PgSearch::Model
   pg_search_scope :global_search,
     against: [ :name, :location, :date, :genre ],
     # associated_against: {

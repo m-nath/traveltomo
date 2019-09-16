@@ -36,6 +36,30 @@ class EventsController < ApplicationController
     @event = policy_scope(Event).find(params[:id])
     authorize @event
     @review = Review.new
+
+    @markers =
+    {
+      lat: @event.latitude,
+      lng: @event.longitude
+      # infoWindow: { content: render_to_string(partial: "/events/info_window", locals: { event: @event }) }
+    }
+  end
+
+  def new
+    @event = Event.new
+    authorize @event
+  end
+
+  def create
+    @event = Event.new(event_params)
+    @event.user = current_user
+    authorize @event
+    raise
+    if @event.save
+      redirect_to event_path(@event)
+    else
+      render :new
+    end
   end
 
   private
