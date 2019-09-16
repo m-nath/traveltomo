@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :events, except: [:edit, :update, :destroy]
-  resources :plans, except: [:destroy]
-  resources :event_plans, only: [:create]
+  resources :events, except: [:destroy]
+  resources :plans, except: [:destroy] do
+    resources :event_plans, only: [:create]
+  end
 
   get 'events/tagged', to: "events#tagged", as: :events_tagged
 end

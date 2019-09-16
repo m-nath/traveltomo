@@ -1,0 +1,34 @@
+<button type="button" class="d-flex align-items-end banner-btn" data-toggle="modal" data-target="#event_form" data-whatever="@getbootstrap">
+  <i class="fas fa-edit btn btn-secondery"></i>
+</button>
+<div class="modal fade" id="event_form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">Edit your event</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= simple_form_for(@event) do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <%= f.input :name, placeholder: @event.name %>
+            <%= f.input :description, placeholder: @event.description%>
+            <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder:"Choose dates", label:false %>
+            <%= f.input :location %>
+            <%= f.input :tag_list %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+          <div class="form-actions d-flex justify-content-between">
+            <%= f.button :submit, class: "btn btn-main" %>
+            <%= link_to 'Back', event_path(@event), class: 'btn btn-secondery'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
