@@ -3,13 +3,13 @@ class UserPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def edit?
-      record == user
-    end
+  def edit?
+    record == user
+  end
 
-    def update
-      edit?
-    end
+  def update
+    edit?
   end
 end

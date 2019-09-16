@@ -49,7 +49,7 @@ event_2 = Event.create!(
   date: 'Late March - Early April',
   location: '2 Chome Kudanminami, Chiyoda City, Tokyo',
   genre: 'Riverside',
-  tag_list: ['sakura', 'spring', 'Imperial Palace', 'moat'],
+  tag_list: ['sakura', 'spring', 'moat'],
   photo: open('https://res.cloudinary.com/dxouryvao/image/upload/v1568596663/Traveltomo/DSC06687-min_numazj.jpg'),
   user: nath
 )
@@ -104,7 +104,7 @@ event_7 = Event.create!(
   date: 'October - November',
   location: 'Nakatsugawa, Chichibu, Saitama',
   genre: 'Nature',
-  tag_list: ['fall foliage', 'Japanese garden', 'gorge'],
+  tag_list: ['fall foliage', 'gorge'],
   photo: open('https://res.cloudinary.com/dxouryvao/image/upload/v1568596669/Traveltomo/IMG_2563-min_wwf9hk.jpg'),
   user: nath
 )

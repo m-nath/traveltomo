@@ -3,29 +3,29 @@ class PlanPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def index?
-      record.user == user
-    end
+  def index?
+    record.user == user
+  end
 
-    def show?
-      true
-    end
+  def show?
+    true
+  end
 
-    def new?
-      show?
-    end
+  def new?
+    show?
+  end
 
-    def edit?
-      new?
-    end
+  def edit?
+    new?
+  end
 
-    def update?
-      new?
-    end
+  def update?
+    new?
+  end
 
-    def destroy?
-      new?
-    end
+  def destroy?
+    new?
   end
 end

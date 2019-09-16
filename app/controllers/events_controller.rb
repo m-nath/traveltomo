@@ -32,10 +32,16 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event = policy_scope(Event).find(params[:id])
+    authorize @event
+    @review = Review.new
+  end
+
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :tag_list)
+    params.require(:event).permit(:name, :description, :location, :date, :photo, :tag_list)
   end
 
 end
