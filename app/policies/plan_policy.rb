@@ -17,6 +17,10 @@ class PlanPolicy < ApplicationPolicy
     show?
   end
 
+  def create?
+    show?
+  end
+
   def edit?
     new?
   end

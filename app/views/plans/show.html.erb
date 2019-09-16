@@ -1,0 +1,9 @@
+<div class="container">
+  <!--   <%# @plans.each do |plan| %> -->
+  <h2><%= @plan.name %></h2>
+  <p><%= @plan.date %></p>
+  <div class="plancard-empty d-flex justify-content-center align-items-center">
+    <%= render 'events/add_eventplan' %>
+  </div>
+  <!--   <%# end %> -->
+</div>

@@ -11,7 +11,7 @@
 </div>
 <!-- banner end -->
 <!-- content start -->
-<div class="d-flex  pb-4justify-content-around">
+<div class="d-flex pb-4 justify-content-around">
   <div class="ml-4 mr-4">
     <p><%= @event.description %></p>
     <p>Address: <%= @event.location %></p>
@@ -58,6 +58,7 @@
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
 ></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_SERVER_KEY']}&callback=myMap"></script>
       </div>
     </div>
     <div class="col-12 col-sm-12 col-md-6">
@@ -73,7 +74,7 @@
                 <% if review.user.photo.present? %>
                   <%= cl_image_tag review.user.photo, class: "avatar" %>
                 <% else %>
-                  <%= image_tag "konbini.jpg", class: "avatar" %>
+                  <%= image_tag "traveltomo-logo.png", class: "avatar" %>
                 <% end %>
                 <div>
                   <h6 class="mx-2"><%= review.user.first_name %> <%= review.user.last_name %></h6>

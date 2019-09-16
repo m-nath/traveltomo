@@ -6,7 +6,9 @@ class EventPlanPolicy < ApplicationPolicy
   end
 
   def create?
-    record.plan.user == user
+    if record.plan.user_id == user
+      true
+    end
   end
 
   def destroy?

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_15_143435) do
+ActiveRecord::Schema.define(version: 2019_09_16_095739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,12 +58,10 @@ ActiveRecord::Schema.define(version: 2019_09_15_143435) do
 
   create_table "plans", force: :cascade do |t|
     t.string "name"
-    t.bigint "user_id"
-    t.bigint "month_id"
-    t.integer "num_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["month_id"], name: "index_plans_on_month_id"
+    t.string "date"
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_plans_on_user_id"
   end
 
@@ -144,7 +142,6 @@ ActiveRecord::Schema.define(version: 2019_09_15_143435) do
   add_foreign_key "interests", "events"
   add_foreign_key "interests", "users"
   add_foreign_key "months", "seasons"
-  add_foreign_key "plans", "months"
   add_foreign_key "plans", "users"
   add_foreign_key "prefectures", "regions"
   add_foreign_key "reviews", "events"

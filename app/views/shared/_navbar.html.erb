@@ -21,8 +21,11 @@
         <% end %>
       </div>
       <!-- search button end -->
+      <!-- my order start -->
+      <div><%= link_to "My Plans", plans_path, class: "nav-link navbar-text" %></div>
+      <!-- my order end -->
       <!-- my plan start -->
-      <div class="ml-4">
+      <div class="">
         <% if user_signed_in? && current_user.plans.present? %>
           <div><%= link_to "My Plan", plans_path, class: "nav-link navbar-text" %></div>
         <% end %>
