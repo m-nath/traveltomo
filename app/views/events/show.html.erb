@@ -9,7 +9,7 @@
     <!-- interest -->
     <div class="int-btn">
       <% if user_signed_in? && current_user.interested_events.include?(@event) %>
-        <%= link_to interest_path(@event), method: :delete, data: { confirm: "You have removed this event from your interest list" } do %>
+        <%= link_to interest_path(@interest), method: :delete, data: { confirm: "You have removed this event from your interest list" } do %>
           <div class = "btn btn-main m-2">Remove Interest</div>
         <% end %>
       <% else %>
@@ -37,6 +37,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
+        <%#= cl_image_tag @event.gallery1, class: "d-block w-100" %>
         <img class="d-block w-100" src="https://res.cloudinary.com/dxouryvao/image/upload/v1568596660/Traveltomo/DSC06286-min_by88oz.jpg" alt="First slide">
       </div>
       <div class="carousel-item">

@@ -36,7 +36,8 @@ class EventsController < ApplicationController
     @event = policy_scope(Event).find(params[:id])
     authorize @event
     @review = Review.new
-
+    @event = Event.find(params[:id])
+    @interest = Interest.find_by(user: current_user, event: @event) if user_signed_in?
     @markers =
     {
       lat: @event.latitude,
