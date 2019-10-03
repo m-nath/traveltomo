@@ -1,9 +1,11 @@
 class InterestsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
-    @interest = Interest.new(event: @event, user: current_user)
+    @interest = Interest.new(interest_params)
+    @interest.user = current_user
+    @interest.event = @event
+    authorize @interest
     if @interest.save
-      authorize @interest
       redirect_to event_path(@event)
     else
       render 'events/show', event: @event
@@ -13,10 +15,15 @@ class InterestsController < ApplicationController
   def destroy
     @interest = Interest.find(params[:id])
     authorize @interest
-    # @event = @interest.event
     # @event.user = current_user
     @event = @interest.event
     @interest.destroy
     redirect_to event_path(@event)
+  end
+
+  private
+
+  def interest_params
+    params.require(:interest).permit(:user_id, :event_id)
   end
 end
