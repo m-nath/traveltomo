@@ -37,12 +37,12 @@ class EventsController < ApplicationController
     authorize @event
     @review = Review.new
 
-    @markers =
-    {
-      lat: @event.latitude,
-      lng: @event.longitude
-      # infoWindow: { content: render_to_string(partial: "/events/info_window", locals: { event: @event }) }
-    }
+    @events = Event.where.not(latitude: nil, longitude: nil)
+    @markers = [{
+                  lat: @event.latitude,
+                  lng: @event.longitude,
+                  infoWindow: { content: render_to_string(partial: "/events/info_window", locals: { event: @event }) }
+    }]
   end
 
   def new
