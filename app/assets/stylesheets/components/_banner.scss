@@ -32,6 +32,8 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+
+
 .d-fex {
   display: flex;
   position: relative;
@@ -52,29 +54,6 @@
 }
 
 
-// .plan-description {
-//   position: absolute;
-//   left: 50px;
-//   top: 320px;
-//   color: $white;
-//   font-weight: 300;
-//   width: 60vw;
-// }
-
-// .plan-price {
-//   position: absolute;
-//   left: 50px;
-//   top: 400px;
-//   color: $white;
-//   font-weight:4000;
-// }
-
-// .plan-order {
-//   position: absolute;
-//   left: 50px;
-//   top: 450px;
-// }
-
 .banner-name{
   position: absolute;
   left: 50px;
@@ -85,7 +64,22 @@
   position: absolute;
   left: 50px;
   top: 300px;
-  width: 50%;
+  // width: 50%;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 530px) {
+  .banner-p {
+    padding-top: 30px;
+    left: 6%;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 530px) {
+  .banner-name {
+    left: 6%;
+    top: 39%;
+  }
 }
 
 .banner-p-short {

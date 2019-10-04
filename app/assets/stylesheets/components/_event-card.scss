@@ -1,0 +1,39 @@
+.event-card {
+  padding: 10px;
+  margin-right: 1%;
+  background-color: lightgrey;
+  width: 80%;
+}
+
+@media (max-width: 765px) {
+  .event-card {
+    width:100%;
+    position: relative;
+    right: 9%;
+  }
+}
+
+.event-bcard {
+  display: flex
+}
+
+@media (max-width: 765px) {
+  .event-bcard {
+    display: inline-grid;
+    position: relative;
+    left: 9%;
+  }
+}
+
+#carouselExampleIndicators {
+    width: 50%;
+  }
+
+@media (max-width: 765px) {
+  #carouselExampleIndicators {
+    width: 100%;
+    margin-top: 1%;
+    position: relative;
+    left: -9%;
+  }
+}

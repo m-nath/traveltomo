@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_120731) do
+ActiveRecord::Schema.define(version: 2019_10_03_143206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 2019_10_03_120731) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["season_id"], name: "index_months_on_season_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.string "image"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_pictures_on_event_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -146,6 +154,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_120731) do
   add_foreign_key "interests", "events"
   add_foreign_key "interests", "users"
   add_foreign_key "months", "seasons"
+  add_foreign_key "pictures", "events"
   add_foreign_key "plans", "users"
   add_foreign_key "prefectures", "regions"
   add_foreign_key "reviews", "events"

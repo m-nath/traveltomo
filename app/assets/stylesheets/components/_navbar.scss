@@ -1,16 +1,20 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  opacity: 0.9;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
 }
 
-// .navbar-lewagon:hover {
-//   justify-content: space-between;
-//   z-index: 1;
-//   background: $white;
-//   opacity: 1;
-//   position: fixed;
-//   width: 100%;
-// }
+.navbar-lewagon:hover {
+  justify-content: space-between;
+  z-index: 1;
+  background: $white;
+  opacity: 1;
+  position: fixed;
+  width: 100%;
+}
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

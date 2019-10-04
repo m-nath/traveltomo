@@ -22,10 +22,13 @@
             <%= f.input :tag_list %>
             <%= f.input :photo %>
             <%= f.input :photo_cache, as: :hidden %>
+            <%= simple_fields_for :pictures do |picture| %>
+              <%= picture.input :image, as: :file, input_html: { multiple: true } %>
+            <% end %>
           </div>
           <div class="form-actions d-flex justify-content-between">
             <%= f.button :submit, class: "btn btn-main" %>
-            <%= link_to 'Back', event_path(@event), class: 'btn btn-secondery'%>
+            <button type="button" class="btn btn-secondery" data-dismiss="modal">Close</button>
           </div>
         <% end %>
       </div>

@@ -38,12 +38,12 @@ class EventsController < ApplicationController
     @review = Review.new
     @event = Event.find(params[:id])
     @interest = Interest.find_by(user: current_user, event: @event) if user_signed_in?
-    @markers =
-    {
-      lat: @event.latitude,
-      lng: @event.longitude
-      # infoWindow: { content: render_to_string(partial: "/events/info_window", locals: { event: @event }) }
-    }
+    @events = Event.where.not(latitude: nil, longitude: nil)
+    @markers = [{
+                  lat: @event.latitude,
+                  lng: @event.longitude,
+                  infoWindow: { content: render_to_string(partial: "/events/info_window", locals: { event: @event }) }
+    }]
   end
 
   def new
@@ -87,4 +87,10 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :description, :location, :date, :photo, :tag_list)
   end
 
+  def create_pictures
+    images = params.dig(:event, :pictures) || []
+    images.each do |image|
+      @event.pictures.create(image: image)
+    end
+  end
 end

@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  margin-top: 76px;
+  flex: 1;
+}
