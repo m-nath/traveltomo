@@ -5,10 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "start seeding"
 
-User.destroy_all if Rails.env.development?
+puts "deleting previous seed"
+Interest.destroy_all if Rails.env.development?
+EventPlan.destroy_all if Rails.env.development?
 Event.destroy_all if Rails.env.development?
+User.destroy_all if Rails.env.development?
+
+puts "start seeding"
 
 puts "creating users with photos"
 

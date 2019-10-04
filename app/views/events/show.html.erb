@@ -9,7 +9,7 @@
     <!-- interest -->
     <div class="int-btn">
       <% if user_signed_in? && current_user.interested_events.include?(@event) %>
-        <%= link_to interest_path(@event), method: :delete, data: { confirm: "You have removed this event from your interest list" } do %>
+        <%= link_to interest_path(@interest), method: :delete, data: { confirm: "You have removed this event from your interest list" } do %>
           <div class = "btn btn-main m-2">Remove Interest</div>
         <% end %>
       <% else %>
