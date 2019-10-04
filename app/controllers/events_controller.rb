@@ -86,4 +86,10 @@ class EventsController < ApplicationController
     params.require(:event).permit(:name, :description, :location, :date, :photo, :tag_list)
   end
 
+  def create_pictures
+    images = params.dig(:event, :pictures) || []
+    images.each do |image|
+      @event.pictures.create(image: image)
+    end
+  end
 end

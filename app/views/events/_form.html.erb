@@ -18,6 +18,7 @@
     </div>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
   </div>
   <div class="form-actions d-flex justify-content-between">
     <%= f.button :submit, class: "btn btn-main" %>

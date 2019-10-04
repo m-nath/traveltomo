@@ -23,13 +23,13 @@
 </div>
 <!-- banner end -->
 <!-- content start -->
-<div class="d-flex pb-4 justify-content-aroun mr-4">
-  <div class="ml-4 mr-4">
-    <p><%= @event.description %></p>
-    <p>Address: <%= @event.location %></p>
-    <p>Access: </p>
+<div class="event-bcard pb-4 justify-content-around ml-4 mr-4">
+  <div class="event-card px-3">
+    <!-- <div class="col-12 col-sm-12 col-md-6 px-3">-->
+    <p>Description: <%= @event.description %></p>
+    <p>Access: <%= @event.access %></p>
   </div>
-  <div id="carouselExampleIndicators" class="carousel slide w-50 float-right" data-ride="carousel">
+  <div id="carouselExampleIndicators" class="carousel slide float-right" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
       <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -37,6 +37,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
+        <%#= cl_image_tag @event.gallery1, class: "d-block w-100" %>
         <img class="d-block w-100" src="https://res.cloudinary.com/dxouryvao/image/upload/v1568596660/Traveltomo/DSC06286-min_by88oz.jpg" alt="First slide">
       </div>
       <div class="carousel-item">
@@ -56,6 +57,7 @@
     </a>
   </div>
 </div>
+<!-- event-card -->
 <div class="container">
   <div class="row no-gutters mt-4">
     <div class="col-12 col-sm-12 col-md-6 px-2">

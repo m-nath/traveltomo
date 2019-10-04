@@ -1,6 +1,7 @@
 class Event < ApplicationRecord
 
   has_many :reviews, dependent: :destroy
+  has_many :pictures, dependent: :destroy
   has_many :interests_users, :through => :interests, :source => :user
   belongs_to :user
 
