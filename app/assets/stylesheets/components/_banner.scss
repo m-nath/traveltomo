@@ -32,8 +32,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-
-
 .d-fex {
   display: flex;
   position: relative;
@@ -67,11 +65,17 @@
   // width: 50%;
 }
 
-// Smallest device
+//Smallest device
 @media (min-width: 100px) and (max-width: 530px) {
   .banner-p {
-    padding-top: 30px;
+    padding-top: 15%;
     left: 6%;
+  }
+}
+
+@media (min-width: 531px) and (max-width: 625px) {
+  .banner-p {
+    padding-top: 8%;
   }
 }
 

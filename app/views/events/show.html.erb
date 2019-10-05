@@ -76,8 +76,8 @@
     <div class="col-12 col-sm-12 col-md-6">
       <div class="container">
         <h2>Review</h2>
+        <%= render 'reviews/form' %>
         <% if @event.reviews.present? %>
-          <%= render 'reviews/form' %>
           <!-- this is for showing review -->
           <p class="review-comment mt-4">Review comment</p>
           <div class="scroll p-3">
@@ -104,9 +104,13 @@
             <% end %>
           </div>
         <% else %>
+          <br>
           <p>Be the first one to review!!</p>
         <% end %>
       </div>
+    </div>
+    <div class="container text-center">
+      <%= link_to "All Events", events_path, class: "btn btn-secondery" %>
     </div>
   </div>
 </div>
