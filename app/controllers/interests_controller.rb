@@ -1,7 +1,7 @@
 class InterestsController < ApplicationController
   def create
     @event = Event.find(params[:event_id])
-    @interest = Interest.new(interest_params)
+    @interest = Interest.new(event: @event, user: current_user)
     @interest.user = current_user
     @interest.event = @event
     authorize @interest
