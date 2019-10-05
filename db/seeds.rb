@@ -67,7 +67,7 @@ event_2 = Event.create!(
 )
 
 event_3 = Event.create!(
-  name: 'Old Nakagawa Riverbed Kawazu Cherry Blossom',
+  name: 'Old Nakagawa Kawazu Cherry Blossom',
   description: 'The home of the most famous cherry blossom spot in Tokyo, Nakameguro canal is a blossom wonderland in spring.',
   date: 'Late February - Mid March',
   location: '3 Chome-1-1 Hirai, Edogawa City, Tokyo',
@@ -100,7 +100,7 @@ event_5 = Event.create!(
   name: 'Shioiri Park Cherry Blossom',
   description: 'The home of the most famous cherry blossom spot in Tokyo, Nakameguro canal is a blossom wonderland in spring.',
   date: 'March 23 - April 10',
-  location: '108 Hikawacho, Kawagoe, Saitama',
+  location: '8 Chome-13-1 Minamisenju, Arakawa City, Tokyo',
   access: '12-min walk from Minami-Senju Station',
   genre: 'Park',
   tag_list: ['sakura', 'spring', 'kawazu'],
@@ -157,7 +157,7 @@ event_8 = Event.create!(
 )
 
 event_9 = Event.create!(
-  name: 'Koishikawa Gorakuen Park Autumn Colors',
+  name: 'Koishikawa Gorakuen Autumn Colors',
   description: 'The home of the most famous cherry blossom spot in Tokyo, Nakameguro canal is a blossom wonderland in spring.',
   date: 'Late November - Early December',
   location: '1 Chome-6-6 Koraku, Bunkyo City, Tokyo',
@@ -181,7 +181,7 @@ event_10 = Event.create!(
   tag_list: ['fall foliage', 'temple'],
   photo: open('https://res.cloudinary.com/dxouryvao/image/upload/v1568596687/Traveltomo/ORG_DSC01790-min_l7pmxt.jpg'),
   gallery1: open('https://res.cloudinary.com/dxouryvao/image/upload/v1570104349/Traveltomo/ORG_DSC01802_ep3atn.jpg'),
-  gallery2: open('https://res.cloudinary.com/dxouryvao/image/upload/v1570104350/Traveltomo/IMG_2719_fu2cwc.heic'),
+  gallery2: open('https://res.cloudinary.com/dxouryvao/image/upload/v1570275276/Traveltomo/IMG_2719_fu2cwc_ibawp8.jpg'),
   gallery3: open('https://res.cloudinary.com/dxouryvao/image/upload/v1570104346/Traveltomo/IMG_2710_knujyk.jpg'),
   user: nath
 )

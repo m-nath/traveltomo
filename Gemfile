@@ -20,6 +20,7 @@ gem 'geocoder'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'turbolinks', '~> 5.2.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
