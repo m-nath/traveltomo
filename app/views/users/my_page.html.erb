@@ -1,0 +1,42 @@
+<div class="container my-5">
+  <h3 class="my-1">My Page</h3>
+  <!-- TAB -->
+  <div class="container">
+    <ul class="nav nav-tabs" id="myTab" role="tablist" style="
+  font-size: large;
+  font-weight: bold;">
+      <li class="nav-item">
+        <a class="tab-text nav-link active" id="event-tab" data-toggle="tab" href="#event" role="tab" aria-controls="event" aria-selected="true">Events I created</a>
+      </li>
+      <li class="nav-item">
+        <a class="tab-text nav-link" id="interest-tab" data-toggle="tab" href="#interest" role="tab" aria-controls="interest" aria-selected="false">Events I'm interested</a>
+      </li>
+      <li class="nav-item">
+        <a class="tab-text nav-link" id="plan-tab" data-toggle="tab" href="#plan" role="tab" aria-controls="plan" aria-selected="false">My Plan</a>
+      </li>
+    </ul>
+    <!-- CONTENT -->
+    <div class="tab-content" id="myTabContent">
+      <!-- content nav -->
+      <!-- my events -->
+      <div class="tab-pane show active" id="event" role="tabpanel" aria-labelledby="event-tab">
+        <%= render 'shared/my_events' %>
+        <div class="d-flex justify-content-center">
+          <p class="btn btn-secondery mx-auto my-3"><%= link_to "All Events", events_path %></p>
+        </div>
+      </div>
+      <!-- interest content -->
+      <div class="tab-pane" id="interest" role="tabpanel" aria-labelledby="interest-tab">
+        <!--        <div class="row mt-3"> -->
+        <%= render 'shared/interested_events' %>
+        <!--         </div> -->
+      </div>
+      <!-- my plan -->
+      <div class="tab-pane" id="plan" role="tabpanel" aria-labelledby="plan-tab">
+        <div class="row mt-3">
+          <%= render 'plans/index' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
