@@ -11,5 +11,6 @@ class UsersController < ApplicationController
   def my_page
     @user = current_user
     authorize @user
+    @event = current_user.events
   end
 end

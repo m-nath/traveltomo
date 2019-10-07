@@ -1,6 +1,11 @@
-<h1>My Plans</h1>
-<% current_user.plans.each do |plan| %>
-  <h3><%= plan.name %></h3>
-  <!-- <h2><%#= link_to plan.name, plan_path(@plan) %></h2> -->
-  <p><%= plan.date %></p>
-<% end %>
+<div class="container">
+  <h1>My Plans</h1>
+  <% current_user.plans.each do |plan| %>
+    <h3><%= plan.name %></h3>
+    <!-- <h2><%#= link_to plan.name, plan_path(@plan) %></h2> -->
+    <p><%= plan.date %></p>
+  <% end %>
+  <div class="d-flex justify-content-center">
+    <p class="btn btn-secondery mx-auto my-3"><%= link_to "Create a Plan", new_plan_path %></p>
+  </div>
+</div>
