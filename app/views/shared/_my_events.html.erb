@@ -14,8 +14,9 @@
             <%#= link_to '#'+tag, events_path(tag: tag), class: "tab-text-tag mx-1 px-1" %>
           <%# end %> -->
           <%= link_to event_path(event), method: :delete, data: { confirm: "Do you really want to delete the event?" } do %>
-            <div class = "btn btn-main m-2">Delete</div>
+            <div class = "btn btn-mypage m-2">Delete</div>
           <% end %>
+          <%#= render 'events/edit_form' %>
         </div>
       </div>
     </div>

@@ -10,6 +10,16 @@
   transition: background 0.3s ease;
 }
 
+.btn-mypage {
+  color: $white;
+  padding: 2px 17px;
+  border-radius: 100px;
+  background: $darkorange;
+  transition: background 0.3s ease;
+  position: absolute;
+  right: 20px;
+}
+
 button.stripe-button-el {
   visibility: hidden;
   display: none;
