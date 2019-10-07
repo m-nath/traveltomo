@@ -1,0 +1,29 @@
+<div class="row mt-3">
+  <% if current_user.interests.present? %>
+    <% current_user.interests.each do |interest|%>
+      <div class="col-xl-3 col-lg-4 col-md-4 col-md-6 col-sm-12">
+        <div class="card-trip-home">
+          <%= cl_image_tag(interest.event.photo, width: 500, height: 400, crop: :fill) %>
+          <div class="card-trip-infos">
+            <div class="">
+              <h4 class="tab-text-content mx-2"><%= link_to interest.event.name, event_path(interest.event), { :class=>"stretched-link" }  %></h4>
+            </div>
+          </div>
+          <div class="mx-3">
+            <p>Best View:  <%= interest.event.date %></p>
+            <!--             <#% event.tag_list.each do |tag| %>
+              <%#= link_to '#'+tag, events_path(tag: tag), class: "tab-text-tag mx-1 px-1" %>
+            <%# end %> -->
+            <%= link_to interest_path(interest), method: :delete, data: { confirm: "Do you really want to delete the event?" } do %>
+              <div class = "btn btn-main m-2">Delete</div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="d-flex justify-content-center">
+      <p class="btn btn-secondery mx-auto my-3"><%= link_to "Find Events", events_path %></p>
+    </div>
+  <% end %>
+</div>

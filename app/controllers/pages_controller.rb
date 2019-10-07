@@ -24,4 +24,7 @@ class PagesController < ApplicationController
       # @plans = policy_scope(Plan)
     end
   end
+
+  def show
+  end
 end
