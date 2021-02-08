@@ -15,7 +15,7 @@ gem 'sassc-rails'
 gem "simple_form", ">= 5.0.0"
 gem 'uglifier'
 gem 'webpacker'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'geocoder'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
